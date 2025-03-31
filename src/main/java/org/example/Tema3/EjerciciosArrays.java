@@ -1,5 +1,4 @@
 package org.example.Tema3;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,7 +6,6 @@ public class EjerciciosArrays {
     static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
-        eliminarDuplicados();
     }
 
     public static void arrays() {
