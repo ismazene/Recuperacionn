@@ -53,7 +53,7 @@ public class EjerciciosMatrices {
 
         int matriz[][] = new int[filas][columnas];
 
-        //proceso de rellenar la matriz
+        //rellenar la matriz
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 System.out.print("Valor para la posición [" + i + "][" + j + "]: ");
@@ -67,7 +67,7 @@ public class EjerciciosMatrices {
             for (int j = 0; j < columnas; j++) {
                 System.out.print(matriz[i][j] + " ");
             }
-            System.out.println(); //insertamos un salto de línea al final de cada fila para que se imprima fiel a la realidad
+            System.out.println();
         }
     }
     public static void imprimMatriz(){
@@ -94,5 +94,8 @@ public class EjerciciosMatrices {
             }
             System.out.print("\n");
         }
+    }
+    public static void buscarEnMatriz(){
+
     }
 }
