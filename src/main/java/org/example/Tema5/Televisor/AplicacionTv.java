@@ -3,7 +3,7 @@ package org.example.Tema5.Televisor;
 public class AplicacionTv {
     public static void main(String[] args) {
         // Crear objetos Televisor
-        Televisor tv1 = new Televisor();
+        Televisor tv1 = new Televisor(11, 43);
         Televisor tv2 = new Televisor(10, 20);
 
         // Probar métodos en tv1
