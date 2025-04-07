@@ -42,13 +42,16 @@ public class Bizum extends MetodoPago{
     public void procesarPago(double importe){
         System.out.println("Procesando pago de " + importe + "€ con Bizum");
     }
-    public boolean validarBizum(int pinUsuario, int pin){
-        if (!formatoTelefono.matches(telefono)){
-            System.out.println("El telefono no es correcto");
+    public boolean validarBizum() {
+        if (!telefono.matches(formatoTelefono)) {
+            System.out.println("El teléfono no es correcto");
+            return false;
         }
-        if (!(pin == pinUsuario)){
-            System.out.println("El pin es inccorecto");
+        int pinUsuario = preguntarPin();
+        if (pin != pinUsuario) {
+            System.out.println("El PIN es incorrecto");
+            return false;
         }
-        return false;
+        return true;
     }
 }

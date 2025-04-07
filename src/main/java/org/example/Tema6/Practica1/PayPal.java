@@ -7,9 +7,12 @@ public class PayPal extends MetodoPago{
     //Formato del correo electronico.
     String formatoCorreo = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-]+.com$";
 
-    public PayPal(String cuenta, double saldo) {
+    public PayPal(String cuenta) {
         this.saldo = 23.0;  // Saldo por defecto 23€
-        this.cuenta = "";
+        this.cuenta = cuenta;
+    }
+
+    public void meterSaldo(int saldo){
     }
 
     public String getCuenta() {
@@ -31,7 +34,7 @@ public class PayPal extends MetodoPago{
     public void procesarPago(double importe) {
         System.out.println("Procesando pago de" + importe + "€ con PayPal");
     }
-    private boolean validarPayPal() {
+    public boolean validarPayPal() {
         if (!cuenta.matches(formatoCorreo))
             System.out.println("El formato no es valido");
             return false;

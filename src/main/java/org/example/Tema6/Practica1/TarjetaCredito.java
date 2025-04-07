@@ -8,7 +8,7 @@ public class TarjetaCredito {
     int numeroMax = 16;
 
 
-    public TarjetaCredito(String nro_tarjeta, String tipo) {
+    public TarjetaCredito(String nro_tarjeta) {
         this.nro_tarjeta = nro_tarjeta;
         this.tipo = tipo;
     }
