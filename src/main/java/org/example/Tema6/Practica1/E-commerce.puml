@@ -1,0 +1,61 @@
+@startuml
+' Definimos los paquetes
+package "org.example.Tema6.Practica1" {
+
+    ' Clase principal
+    class AppEcommerce {
+        +main(args: String[]): void
+    }
+
+    ' Clase abstracta
+    abstract class MetodoPago {
+        +procesarPago(importe: double): void
+    }
+
+    ' Clases que heredan MetodoPago
+    class Bizum {
+        -telefono: String
+        -pin: int
+        -formatoTelefono: String
+        +Bizum(telefono: String)
+        +generarPin(): void
+        +preguntarPin(): int
+        +validarPin(pinUsuario: int): boolean
+        +procesarPago(importe: double): void
+        +validarBizum(): boolean
+    }
+
+    class PayPal {
+        -cuenta: String
+        -saldo: double
+        -formatoCorreo: String
+        +PayPal(cuenta: String)
+        +procesarPago(importe: double): void
+        +validarPayPal(): boolean
+        +validarSaldo(importe: double): boolean
+    }
+
+    class TarjetaCredito {
+        -nro_tarjeta: String
+        -tipo: String
+        -tipos: String[]
+        +TarjetaCredito(nro_tarjeta: String, tipo: String)
+        +procesarPago(importe: double): void
+        +validarTarjeta(): boolean
+    }
+
+    class Tienda {
+        +iniciarPago(): void
+        +dineroPagar(): double
+        +realizarPago(metodo: MetodoPago, importe: double): void
+    }
+
+    ' Relaciones
+    AppEcommerce --> Tienda : usa
+    Tienda --> MetodoPago : usa
+    MetodoPago <|-- Bizum
+    MetodoPago <|-- PayPal
+    MetodoPago <|-- TarjetaCredito
+}
+
+@enduml
